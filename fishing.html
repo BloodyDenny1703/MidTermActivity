@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>FISHING STORE ERDER FORM</title>
+</head>
+<body bgcolor="#FFF99" text="#800000">
+    <h1 align="center">FISHING STORE ORDER FORM</h1>
+    <p align="center">We rent all of our fishing equipment by the week.</p>
+    
+    <form method="post" name="form" action="javascript:void(0)">
+        <table border="1" width="39%" align="center">
+            <tr>
+                <td width="48%"><b>Product Name</b></td>
+                <td width="10%"><b>Price</b></td>
+                <td width="43%"><b>Quantity</b></td>
+            </tr>            
+            <tr>
+                <td width="48%">1 Fishing Rod &amp; Reel</td>
+                <td width="10%"><input type="text" name="txtRod" size="5" value="7.99"</td>
+                <td width="43%">
+                    <select size="1" name="qRod">
+                    <option selected value="0">Select Quantity</option>
+                    <option selected value="1">1</option>
+                    <option selected value="2">2</option>
+                    <option selected value="3">3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="48%">1 Tackle Box</td>
+                <td width="10%">
+                    <input type="text" name="txtBox" size="5" value="2.55">                 
+                </td>
+                <td widt="43%">
+                    <select size="1" name="qBox">
+                    <option selected value="0">Select Quantity</option>
+                    <option selected value="1">1</option>
+                    <option selected value="2">2</option>
+                    <option selected value="3">3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="48%">1 Taga Box</td>
+                <td width="10%">
+                    <input type="text" name="txtTag" size="5" value="1.75">                 
+                </td>
+                <td widt="43%">
+                    <select size="1" name="qTag">
+                    <option selected value="0">Select Quantity</option>
+                    <option selected value="1">1</option>
+                    <option selected value="2">2</option>
+                    <option selected value="3">3</option>
+                    </select>
+                </td>
+            </tr>
+            
+        </table>
+        <p align="center">
+            <input type="submit" value="Calculate your Order" name="btnSubmit" onClick="calcTotal()">
+            <input type="reset" value="Reset" name="btnReset">
+            <p align="center">Your total is:
+                <input type="text" name="txtTotal" size="10" value="0.00">
+            </p>
+            <p align="center">
+                <input type="submit" value="Calculate your Change" name="btnSubmit" onClick="calcChange()">
+              </p>
+                 <p align="center">Tender:
+                    <input type="text" name="txtTender" size="10" value="0.00">
+                </p>
+            <p align="center"> Change:
+               <input type="text" name="txtCha" size="10" value="0.00">
+            </p>
+        </p>
+    </form>
+    <script language="javascript">
+        function calcTotal(){
+            var strRod, strBox, strTag, prRod, prBox, prTag, strTotal;
+            strRod=document.form.qRod.value;
+            strBox=document.form.qBox.value;
+            strTag=document.form.qTag.value;
+                        
+            prRod=document.form.txtRod.value;
+            prBox=document.form.txtBox.value;
+            prTag=document.form.txtTag.value;
+            
+            strRod=parseInt(strRod)*prRod;
+            strBox=parseInt(strBox)*prBox;
+            strTag=parseInt(strTag)*prTag;
+                        
+            strTotal=(strRod+strBox+strTag);            
+            document.form.txtTotal.value=strTotal;
+            
+            }
+        function calcChange(){
+            var strTotal, strChange, strTen;
+            
+            strChange=(strTotal-strTen);
+            document.form.txtChange.value=strChange;
+        
+        }
+    </script>
+</body>
+</html>
