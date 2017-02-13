@@ -61,15 +61,6 @@
             <p align="center">Your total is:
                 <input type="text" name="txtTotal" size="10" value="0.00">
             </p>
-            <p align="center">
-                <input type="submit" value="Calculate your Change" name="btnSubmit" onClick="calcChange()">
-              </p>
-                 <p align="center">Tender:
-                    <input type="text" name="txtTender" size="10" value="0.00">
-                </p>
-            <p align="center"> Change:
-               <input type="text" name="txtCha" size="10" value="0.00">
-            </p>
         </p>
     </form>
     <script language="javascript">
@@ -91,12 +82,6 @@
             document.form.txtTotal.value=strTotal;
             
             }
-        function calcChange(){
-            var strTotal, strChange, strTen;
-            
-            strChange=(strTotal-strTen);
-            document.form.txtChange.value=strChange;
-                }
     </script>
 </body>
 </html>
