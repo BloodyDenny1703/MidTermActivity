@@ -51,20 +51,17 @@
     </form>
     <script language="javascript">
         function calcTotal(){
-            var strRod, strBox, strTag, prRod, prBox, prTag, strTotal;
+            var strRod, strBox, prRod, prBox, strTotal;
             strRod=document.form.qRod.value;
             strBox=document.form.qBox.value;
-            strTag=document.form.qTag.value;
                         
             prRod=document.form.txtRod.value;
             prBox=document.form.txtBox.value;
-            prTag=document.form.txtTag.value;
             
             strRod=parseInt(strRod)*prRod;
             strBox=parseInt(strBox)*prBox;
-            strTag=parseInt(strTag)*prTag;
                         
-            strTotal=(strRod+strBox+strTag);            
+            strTotal=(strRod+strBox);            
             document.form.txtTotal.value=strTotal;
             
             }
